@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cirix — Software, datos e IA</title>
+<meta name="description" content="Cirix diseña y construye aplicaciones, productos de datos e inteligencia artificial. Buenos Aires, Argentina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0B1410;
+    --bg-panel: #101C16;
+    --bg-panel-2: #0E1813;
+    --line: #21332A;
+    --line-soft: #182620;
+    --copper: #B8703F;
+    --copper-dim: #7A4F32;
+    --gold: #E8C468;
+    --ink: #EDEAE2;
+    --muted: #8FA396;
+    --muted-dim: #5C6E64;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+    --maxw: 1080px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: inherit; }
+
+  :focus-visible{
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+
+  .wrap{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* subtle global board texture */
+  body::before{
+    content:"";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size: 42px 42px;
+    opacity: 0.35;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 90%);
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position: relative;
+    z-index: 2;
+    border-bottom: 1px solid var(--line);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 18px 0;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    font-size: 1.05rem;
+    text-decoration:none;
+  }
+  .logo svg{ display:block; }
+  .nav-mail{
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-decoration: none;
+    border: 1px solid var(--line);
+    padding: 7px 14px;
+    border-radius: 3px;
+    transition: border-color .15s ease, color .15s ease;
+  }
+  .nav-mail:hover{ border-color: var(--gold); color: var(--gold); }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position: relative;
+    z-index: 1;
+    padding: 96px 0 88px;
+    overflow: hidden;
+  }
+  .hero-traces{
+    position:absolute;
+    top: -40px; right: -60px;
+    width: 620px; max-width: 70vw;
+    opacity: 0.9;
+    z-index: -1;
+  }
+  .eyebrow{
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    color: var(--copper);
+    text-transform: uppercase;
+    margin: 0 0 22px;
+    display:flex;
+    align-items:center;
+    gap: 10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width: 18px; height: 1px;
+    background: var(--copper);
+    display:inline-block;
+  }
+  h1{
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    margin: 0 0 26px;
+    max-width: 15ch;
+  }
+  h1 em{
+    font-style: normal;
+    color: var(--gold);
+  }
+  .hero p{
+    font-size: 1.08rem;
+    color: var(--muted);
+    max-width: 46ch;
+    margin: 0 0 36px;
+  }
+  .cta{
+    display:inline-flex;
+    align-items:center;
+    gap: 10px;
+    background: var(--gold);
+    color: #16130A;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.92rem;
+    letter-spacing: 0.02em;
+    padding: 13px 22px;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .cta:hover{ transform: translateY(-1px); box-shadow: 0 6px 24px rgba(232,196,104,0.18); }
+
+  /* ---------- SECTION SHARED ---------- */
+  section{ position: relative; z-index: 1; }
+  .section-inner{ padding: 70px 0; border-top: 1px solid var(--line); }
+  .section-label{
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted-dim);
+    margin: 0 0 36px;
+  }
+
+  /* ---------- SERVICES (pads) ---------- */
+  .pads{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .pad{
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 26px 22px;
+    transition: border-color .15s ease;
+  }
+  .pad:hover{ border-color: var(--copper); }
+  .pad-id{
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--copper);
+    letter-spacing: 0.08em;
+    margin: 0 0 14px;
+  }
+  .pad h3{
+    font-family: var(--font-mono);
+    font-size: 1.02rem;
+    margin: 0 0 10px;
+    font-weight: 600;
+  }
+  .pad p{
+    color: var(--muted);
+    font-size: 0.94rem;
+    margin: 0;
+  }
+
+  /* ---------- BOARD / PRODUCTS ---------- */
+  .board{
+    display:flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .component{
+    display:flex;
+    gap: 22px;
+    align-items:flex-start;
+    background: var(--bg-panel);
+    border: 1px solid var(--copper-dim);
+    border-radius: 4px;
+    padding: 26px;
+  }
+  .component .chip{
+    flex: none;
+    width: 46px; height: 46px;
+    border-radius: 4px;
+    background: linear-gradient(160deg, var(--gold), var(--copper));
+    box-shadow: 0 0 0 4px rgba(232,196,104,0.08);
+  }
+  .component .body h3{
+    font-family: var(--font-mono);
+    margin: 0 0 4px;
+    font-size: 1.08rem;
+  }
+  .component .status{
+    display:inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    border: 1px solid var(--copper-dim);
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .component p{
+    color: var(--muted);
+    margin: 0;
+    font-size: 0.95rem;
+    max-width: 60ch;
+  }
+
+  .component.empty{
+    border-style: dashed;
+    border-color: var(--line);
+    background: transparent;
+  }
+  .component.empty .chip{
+    background: transparent;
+    border: 1.5px dashed var(--line);
+    box-shadow: none;
+  }
+  .component.empty .status{
+    color: var(--muted-dim);
+    border-color: var(--line);
+  }
+  .component.empty h3{ color: var(--muted); font-weight: 500; }
+  .component.empty p{ color: var(--muted-dim); }
+
+  /* ---------- FOOTER ---------- */
+  footer .section-inner{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+    align-items:center;
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+  footer{ font-family: var(--font-mono); font-size: 0.82rem; color: var(--muted-dim); }
+  footer a{ color: var(--muted); text-decoration: none; }
+  footer a:hover{ color: var(--gold); }
+
+  @media (max-width: 760px){
+    .pads{ grid-template-columns: 1fr; }
+    .component{ flex-direction: column; }
+    .hero-traces{ display:none; }
+    footer .section-inner{ flex-direction: column; align-items: flex-start; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .pulse{ animation: none !important; }
+  }
+
+  @keyframes travel{
+    0%{ stroke-dashoffset: 240; opacity: 0; }
+    8%{ opacity: 1; }
+    92%{ opacity: 1; }
+    100%{ stroke-dashoffset: 0; opacity: 0; }
+  }
+  .pulse{
+    stroke-dasharray: 6 234;
+    animation: travel 5.5s linear infinite;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo" aria-label="Cirix">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="6" y="6" width="10" height="10" rx="1.5" stroke="#E8C468" stroke-width="1.4"/>
+        <path d="M11 1V6M11 16V21M1 11H6M16 11H21M3.5 3.5L6.5 6.5M18.5 3.5L15.5 6.5M3.5 18.5L6.5 15.5M18.5 18.5L15.5 15.5" stroke="#B8703F" stroke-width="1.2"/>
+      </svg>
+      CIRIX
+    </a>
+    <a class="nav-mail" href="mailto:hola@cirix.com.ar">hola@cirix.com.ar</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <svg class="hero-traces" viewBox="0 0 500 420" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g stroke="#21332A" stroke-width="1.4">
+        <path d="M40 40 H220 V120 H420"/>
+        <path d="M60 160 H180 V240 H60 V320"/>
+        <path d="M260 80 V200 H460"/>
+        <path d="M300 260 H420 V360"/>
+        <path d="M100 320 H260 V400"/>
+      </g>
+      <g fill="#7A4F32">
+        <circle cx="40" cy="40" r="3"/>
+        <circle cx="220" cy="120" r="3"/>
+        <circle cx="420" cy="120" r="3"/>
+        <circle cx="60" cy="160" r="3"/>
+        <circle cx="180" cy="240" r="3"/>
+        <circle cx="60" cy="320" r="3"/>
+        <circle cx="260" cy="80" r="3"/>
+        <circle cx="460" cy="200" r="3"/>
+        <circle cx="300" cy="260" r="3"/>
+        <circle cx="420" cy="360" r="3"/>
+        <circle cx="100" cy="320" r="3"/>
+        <circle cx="260" cy="400" r="3"/>
+      </g>
+      <path class="pulse" d="M40 40 H220 V120 H420" stroke="#E8C468" stroke-width="1.8"/>
+    </svg>
+
+    <div class="wrap">
+      <p class="eyebrow">Cirix — Buenos Aires, AR</p>
+      <h1>El circuito entre una idea y el <em>software</em> que la hace real.</h1>
+      <p>Diseñamos y construimos aplicaciones, productos de datos e inteligencia artificial para negocios que necesitan moverse rápido sin resignar calidad.</p>
+      <a class="cta" href="mailto:hola@cirix.com.ar">Escribinos →</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap section-inner">
+      <p class="section-label">Qué hacemos</p>
+      <div class="pads">
+        <div class="pad">
+          <p class="pad-id">U1 · APPS</p>
+          <h3>Desarrollo de aplicaciones</h3>
+          <p>Web y mobile, de la primera línea de código al producto en producción.</p>
+        </div>
+        <div class="pad">
+          <p class="pad-id">U2 · DATOS</p>
+          <h3>Datos e infraestructura</h3>
+          <p>Pipelines, integraciones y arquitecturas que sostienen el crecimiento del negocio.</p>
+        </div>
+        <div class="pad">
+          <p class="pad-id">U3 · IA</p>
+          <h3>Inteligencia artificial</h3>
+          <p>Automatización aplicada a procesos reales, no a demos de vidriera.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap section-inner">
+      <p class="section-label">Lo que estamos construyendo</p>
+      <div class="board">
+        <div class="component">
+          <div class="chip" aria-hidden="true"></div>
+          <div class="body">
+            <span class="status">En desarrollo</span>
+            <h3>SuriMed</h3>
+            <p>Una app para llevar el seguimiento médico personal: consultas, estudios y tratamientos, todo en un solo lugar.</p>
+          </div>
+        </div>
+        <div class="component empty">
+          <div class="chip" aria-hidden="true"></div>
+          <div class="body">
+            <span class="status">Próximo proyecto</span>
+            <h3>Todavía estamos soldando esta parte</h3>
+            <p>Acá va a aparecer la próxima aplicación.</p>
+          </div>
+        </div>
+        <div class="component empty">
+          <div class="chip" aria-hidden="true"></div>
+          <div class="body">
+            <span class="status">Próximo proyecto</span>
+            <h3>Todavía estamos soldando esta parte</h3>
+            <p>Espacio reservado para lo que sigue.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap section-inner">
+    <span>CIRIX © 2026 · Buenos Aires, Argentina</span>
+    <a href="mailto:hola@cirix.com.ar">hola@cirix.com.ar</a>
+  </div>
+</footer>
+
+</body>
+</html>
