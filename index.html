@@ -3,26 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cirix — Software, datos e IA</title>
-<meta name="description" content="Cirix diseña y construye aplicaciones, productos de datos e inteligencia artificial. Buenos Aires, Argentina.">
+<title>Syntara — Sistemas que sincronizan tu negocio</title>
+<meta name="description" content="Syntara diseña y construye aplicaciones, datos e inteligencia artificial que sincronizan los sistemas de tu negocio. Buenos Aires, Argentina.">
+<link rel="icon" type="image/svg+xml" href="assets/icon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg: #0B1410;
-    --bg-panel: #101C16;
-    --bg-panel-2: #0E1813;
-    --line: #21332A;
-    --line-soft: #182620;
-    --copper: #B8703F;
-    --copper-dim: #7A4F32;
-    --gold: #E8C468;
-    --ink: #EDEAE2;
-    --muted: #8FA396;
-    --muted-dim: #5C6E64;
-    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
-    --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+    --bg: #FFFFFF;
+    --bg-panel: #F5F7F8;
+    --line: #E4E9EB;
+    --line-soft: #EDF1F2;
+    --blue: #1A4D8F;
+    --teal: #2A9DB8;
+    --turquoise: #2AB8A0;
+    --green: #27AE60;
+    --ink: #121212;
+    --muted: #4A4A4A;
+    --muted-dim: #8A8F92;
+    --font-head: 'Poppins', ui-sans-serif, sans-serif;
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --grad: linear-gradient(90deg, var(--blue) 0%, var(--teal) 33%, var(--turquoise) 66%, var(--green) 100%);
     --maxw: 1080px;
   }
 
@@ -33,14 +35,14 @@
     background: var(--bg);
     color: var(--ink);
     font-family: var(--font-sans);
-    line-height: 1.55;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
 
   a{ color: inherit; }
 
   :focus-visible{
-    outline: 2px solid var(--gold);
+    outline: 2px solid var(--turquoise);
     outline-offset: 3px;
   }
 
@@ -48,21 +50,6 @@
     max-width: var(--maxw);
     margin: 0 auto;
     padding: 0 28px;
-  }
-
-  /* subtle global board texture */
-  body::before{
-    content:"";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    background-image:
-      linear-gradient(var(--line-soft) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
-    background-size: 42px 42px;
-    opacity: 0.35;
-    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 90%);
   }
 
   /* ---------- NAV ---------- */
@@ -75,50 +62,46 @@
     display:flex;
     align-items:center;
     justify-content: space-between;
-    padding: 18px 0;
+    padding: 22px 0;
   }
   .logo{
     display:flex;
     align-items:center;
-    gap: 10px;
-    font-family: var(--font-mono);
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    font-size: 1.05rem;
-    text-decoration:none;
   }
-  .logo svg{ display:block; }
+  .logo img{ display:block; height: 34px; width: auto; }
   .nav-mail{
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 0.9rem;
     color: var(--muted);
     text-decoration: none;
     border: 1px solid var(--line);
-    padding: 7px 14px;
-    border-radius: 3px;
+    padding: 8px 16px;
+    border-radius: 999px;
     transition: border-color .15s ease, color .15s ease;
   }
-  .nav-mail:hover{ border-color: var(--gold); color: var(--gold); }
+  .nav-mail:hover{ border-color: var(--turquoise); color: var(--blue); }
 
   /* ---------- HERO ---------- */
   .hero{
     position: relative;
     z-index: 1;
-    padding: 96px 0 88px;
+    padding: 100px 0 90px;
     overflow: hidden;
   }
-  .hero-traces{
+  .hero-waves{
     position:absolute;
-    top: -40px; right: -60px;
-    width: 620px; max-width: 70vw;
+    top: -20px; right: -40px;
+    width: 560px; max-width: 65vw;
     opacity: 0.9;
     z-index: -1;
   }
   .eyebrow{
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    letter-spacing: 0.18em;
-    color: var(--copper);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    color: var(--teal);
     text-transform: uppercase;
     margin: 0 0 22px;
     display:flex;
@@ -127,53 +110,58 @@
   }
   .eyebrow::before{
     content:"";
-    width: 18px; height: 1px;
-    background: var(--copper);
+    width: 18px; height: 2px;
+    border-radius: 2px;
+    background: var(--grad);
     display:inline-block;
   }
   h1{
-    font-family: var(--font-mono);
+    font-family: var(--font-head);
     font-weight: 700;
-    font-size: clamp(2rem, 5vw, 3.4rem);
-    line-height: 1.12;
+    font-size: clamp(2.1rem, 5vw, 3.4rem);
+    line-height: 1.16;
     letter-spacing: -0.01em;
     margin: 0 0 26px;
-    max-width: 15ch;
+    max-width: 16ch;
+    color: var(--ink);
   }
   h1 em{
     font-style: normal;
-    color: var(--gold);
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
   .hero p{
-    font-size: 1.08rem;
+    font-size: 1.1rem;
     color: var(--muted);
-    max-width: 46ch;
+    max-width: 48ch;
     margin: 0 0 36px;
   }
   .cta{
     display:inline-flex;
     align-items:center;
     gap: 10px;
-    background: var(--gold);
-    color: #16130A;
-    font-family: var(--font-mono);
+    background: var(--grad);
+    color: #FFFFFF;
+    font-family: var(--font-sans);
     font-weight: 600;
-    font-size: 0.92rem;
-    letter-spacing: 0.02em;
-    padding: 13px 22px;
-    border-radius: 3px;
+    font-size: 0.94rem;
+    padding: 14px 24px;
+    border-radius: 999px;
     text-decoration: none;
     transition: transform .15s ease, box-shadow .15s ease;
   }
-  .cta:hover{ transform: translateY(-1px); box-shadow: 0 6px 24px rgba(232,196,104,0.18); }
+  .cta:hover{ transform: translateY(-1px); box-shadow: 0 10px 28px rgba(42,157,184,0.28); }
 
   /* ---------- SECTION SHARED ---------- */
   section{ position: relative; z-index: 1; }
   .section-inner{ padding: 70px 0; border-top: 1px solid var(--line); }
   .section-label{
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--muted-dim);
     margin: 0 0 36px;
@@ -188,27 +176,34 @@
   .pad{
     background: var(--bg-panel);
     border: 1px solid var(--line);
-    border-radius: 4px;
-    padding: 26px 22px;
-    transition: border-color .15s ease;
+    border-radius: 12px;
+    padding: 28px 24px;
+    transition: border-color .15s ease, transform .15s ease;
   }
-  .pad:hover{ border-color: var(--copper); }
-  .pad-id{
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--copper);
-    letter-spacing: 0.08em;
-    margin: 0 0 14px;
+  .pad:hover{ border-color: var(--turquoise); transform: translateY(-2px); }
+  .pad-bars{
+    display:flex;
+    align-items:flex-end;
+    gap: 4px;
+    height: 22px;
+    margin: 0 0 16px;
+  }
+  .pad-bars span{
+    display:block;
+    width: 6px;
+    border-radius: 3px;
+    background: var(--grad);
   }
   .pad h3{
-    font-family: var(--font-mono);
-    font-size: 1.02rem;
+    font-family: var(--font-head);
+    font-size: 1.05rem;
     margin: 0 0 10px;
     font-weight: 600;
+    color: var(--ink);
   }
   .pad p{
     color: var(--muted);
-    font-size: 0.94rem;
+    font-size: 0.95rem;
     margin: 0;
   }
 
@@ -223,31 +218,36 @@
     gap: 22px;
     align-items:flex-start;
     background: var(--bg-panel);
-    border: 1px solid var(--copper-dim);
-    border-radius: 4px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
     padding: 26px;
+    text-decoration: none;
+    transition: border-color .15s ease, transform .15s ease;
   }
+  a.component:hover{ border-color: var(--turquoise); transform: translateY(-2px); }
   .component .chip{
     flex: none;
     width: 46px; height: 46px;
-    border-radius: 4px;
-    background: linear-gradient(160deg, var(--gold), var(--copper));
-    box-shadow: 0 0 0 4px rgba(232,196,104,0.08);
+    border-radius: 12px;
+    background: var(--grad);
+    box-shadow: 0 0 0 4px rgba(42,184,160,0.08);
   }
   .component .body h3{
-    font-family: var(--font-mono);
+    font-family: var(--font-head);
     margin: 0 0 4px;
     font-size: 1.08rem;
+    color: var(--ink);
   }
   .component .status{
     display:inline-block;
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
+    font-weight: 600;
     font-size: 0.7rem;
     letter-spacing: 0.08em;
-    color: var(--gold);
-    border: 1px solid var(--copper-dim);
-    padding: 2px 8px;
-    border-radius: 3px;
+    color: var(--green);
+    border: 1px solid var(--turquoise);
+    padding: 2px 10px;
+    border-radius: 999px;
     margin-bottom: 10px;
     text-transform: uppercase;
   }
@@ -285,14 +285,14 @@
     padding-top: 34px;
     padding-bottom: 34px;
   }
-  footer{ font-family: var(--font-mono); font-size: 0.82rem; color: var(--muted-dim); }
+  footer{ font-family: var(--font-sans); font-size: 0.85rem; color: var(--muted-dim); }
   footer a{ color: var(--muted); text-decoration: none; }
-  footer a:hover{ color: var(--gold); }
+  footer a:hover{ color: var(--blue); }
 
   @media (max-width: 760px){
     .pads{ grid-template-columns: 1fr; }
     .component{ flex-direction: column; }
-    .hero-traces{ display:none; }
+    .hero-waves{ display:none; }
     footer .section-inner{ flex-direction: column; align-items: flex-start; }
   }
 
@@ -301,14 +301,14 @@
   }
 
   @keyframes travel{
-    0%{ stroke-dashoffset: 240; opacity: 0; }
+    0%{ stroke-dashoffset: 300; opacity: 0; }
     8%{ opacity: 1; }
     92%{ opacity: 1; }
     100%{ stroke-dashoffset: 0; opacity: 0; }
   }
   .pulse{
-    stroke-dasharray: 6 234;
-    animation: travel 5.5s linear infinite;
+    stroke-dasharray: 8 292;
+    animation: travel 4.5s linear infinite;
   }
 </style>
 </head>
@@ -316,49 +316,47 @@
 
 <header>
   <div class="wrap nav">
-    <a href="#" class="logo" aria-label="Cirix">
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="6" y="6" width="10" height="10" rx="1.5" stroke="#E8C468" stroke-width="1.4"/>
-        <path d="M11 1V6M11 16V21M1 11H6M16 11H21M3.5 3.5L6.5 6.5M18.5 3.5L15.5 6.5M3.5 18.5L6.5 15.5M18.5 18.5L15.5 15.5" stroke="#B8703F" stroke-width="1.2"/>
-      </svg>
-      CIRIX
+    <a href="#" class="logo" aria-label="Syntara">
+      <img src="assets/logo.svg" alt="Syntara">
     </a>
-    <a class="nav-mail" href="mailto:hola@cirix.com.ar">hola@cirix.com.ar</a>
+    <a class="nav-mail" href="mailto:hola@syntara.com.ar">hola@syntara.com.ar</a>
   </div>
 </header>
 
 <main>
   <section class="hero">
-    <svg class="hero-traces" viewBox="0 0 500 420" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <g stroke="#21332A" stroke-width="1.4">
-        <path d="M40 40 H220 V120 H420"/>
-        <path d="M60 160 H180 V240 H60 V320"/>
-        <path d="M260 80 V200 H460"/>
-        <path d="M300 260 H420 V360"/>
-        <path d="M100 320 H260 V400"/>
+    <svg class="hero-waves" viewBox="0 0 500 420" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="waveGrad" gradientUnits="userSpaceOnUse" x1="20" y1="0" x2="480" y2="0">
+          <stop offset="0%" stop-color="#1A4D8F"/>
+          <stop offset="33%" stop-color="#2A9DB8"/>
+          <stop offset="66%" stop-color="#2AB8A0"/>
+          <stop offset="100%" stop-color="#27AE60"/>
+        </linearGradient>
+      </defs>
+      <g stroke="#E4E9EB" stroke-width="1.6">
+        <path d="M20 90 Q 90 40, 160 90 T 300 90 T 440 90"/>
+        <path d="M20 200 Q 90 150, 160 200 T 300 200 T 440 200"/>
+        <path d="M20 310 Q 90 260, 160 310 T 300 310 T 440 310"/>
       </g>
-      <g fill="#7A4F32">
-        <circle cx="40" cy="40" r="3"/>
-        <circle cx="220" cy="120" r="3"/>
-        <circle cx="420" cy="120" r="3"/>
-        <circle cx="60" cy="160" r="3"/>
-        <circle cx="180" cy="240" r="3"/>
-        <circle cx="60" cy="320" r="3"/>
-        <circle cx="260" cy="80" r="3"/>
-        <circle cx="460" cy="200" r="3"/>
-        <circle cx="300" cy="260" r="3"/>
-        <circle cx="420" cy="360" r="3"/>
-        <circle cx="100" cy="320" r="3"/>
-        <circle cx="260" cy="400" r="3"/>
+      <g fill="#B9C3C6">
+        <circle cx="20" cy="90" r="3"/>
+        <circle cx="160" cy="90" r="3"/>
+        <circle cx="300" cy="90" r="3"/>
+        <circle cx="440" cy="90" r="3"/>
+        <circle cx="20" cy="310" r="3"/>
+        <circle cx="160" cy="310" r="3"/>
+        <circle cx="300" cy="310" r="3"/>
+        <circle cx="440" cy="310" r="3"/>
       </g>
-      <path class="pulse" d="M40 40 H220 V120 H420" stroke="#E8C468" stroke-width="1.8"/>
+      <path class="pulse" d="M20 200 Q 90 150, 160 200 T 300 200 T 440 200" stroke="url(#waveGrad)" stroke-width="2.4"/>
     </svg>
 
     <div class="wrap">
-      <p class="eyebrow">Cirix — Buenos Aires, AR</p>
-      <h1>El circuito entre una idea y el <em>software</em> que la hace real.</h1>
-      <p>Diseñamos y construimos aplicaciones, productos de datos e inteligencia artificial para negocios que necesitan moverse rápido sin resignar calidad.</p>
-      <a class="cta" href="mailto:hola@cirix.com.ar">Escribinos →</a>
+      <p class="eyebrow">Syntara — Buenos Aires, AR</p>
+      <h1>Sistemas que <em>sincronizan</em> tu negocio.</h1>
+      <p>Diseñamos y construimos aplicaciones, datos e inteligencia artificial que hacen que las piezas de tu operación trabajen en el mismo compás.</p>
+      <a class="cta" href="mailto:hola@syntara.com.ar">Escribinos →</a>
     </div>
   </section>
 
@@ -367,17 +365,17 @@
       <p class="section-label">Qué hacemos</p>
       <div class="pads">
         <div class="pad">
-          <p class="pad-id">U1 · APPS</p>
+          <div class="pad-bars" aria-hidden="true"><span style="height:35%"></span><span style="height:65%"></span><span style="height:100%"></span><span style="height:65%"></span><span style="height:35%"></span></div>
           <h3>Desarrollo de aplicaciones</h3>
           <p>Web y mobile, de la primera línea de código al producto en producción.</p>
         </div>
         <div class="pad">
-          <p class="pad-id">U2 · DATOS</p>
-          <h3>Datos e infraestructura</h3>
-          <p>Pipelines, integraciones y arquitecturas que sostienen el crecimiento del negocio.</p>
+          <div class="pad-bars" aria-hidden="true"><span style="height:35%"></span><span style="height:65%"></span><span style="height:100%"></span><span style="height:65%"></span><span style="height:35%"></span></div>
+          <h3>Datos e integraciones</h3>
+          <p>Pipelines y arquitecturas que sincronizan la información entre todos tus sistemas.</p>
         </div>
         <div class="pad">
-          <p class="pad-id">U3 · IA</p>
+          <div class="pad-bars" aria-hidden="true"><span style="height:35%"></span><span style="height:65%"></span><span style="height:100%"></span><span style="height:65%"></span><span style="height:35%"></span></div>
           <h3>Inteligencia artificial</h3>
           <p>Automatización aplicada a procesos reales, no a demos de vidriera.</p>
         </div>
@@ -389,19 +387,19 @@
     <div class="wrap section-inner">
       <p class="section-label">Lo que estamos construyendo</p>
       <div class="board">
-        <div class="component">
+        <a class="component" href="https://surimed.syntara.com.ar" target="_blank" rel="noopener">
           <div class="chip" aria-hidden="true"></div>
           <div class="body">
-            <span class="status">En desarrollo</span>
+            <span class="status">En vivo</span>
             <h3>SuriMed</h3>
             <p>Una app para llevar el seguimiento médico personal: consultas, estudios y tratamientos, todo en un solo lugar.</p>
           </div>
-        </div>
+        </a>
         <div class="component empty">
           <div class="chip" aria-hidden="true"></div>
           <div class="body">
             <span class="status">Próximo proyecto</span>
-            <h3>Todavía estamos soldando esta parte</h3>
+            <h3>Todavía estamos afinando esta parte</h3>
             <p>Acá va a aparecer la próxima aplicación.</p>
           </div>
         </div>
@@ -409,7 +407,7 @@
           <div class="chip" aria-hidden="true"></div>
           <div class="body">
             <span class="status">Próximo proyecto</span>
-            <h3>Todavía estamos soldando esta parte</h3>
+            <h3>Todavía estamos afinando esta parte</h3>
             <p>Espacio reservado para lo que sigue.</p>
           </div>
         </div>
@@ -420,8 +418,8 @@
 
 <footer>
   <div class="wrap section-inner">
-    <span>CIRIX © 2026 · Buenos Aires, Argentina</span>
-    <a href="mailto:hola@cirix.com.ar">hola@cirix.com.ar</a>
+    <span>SYNTARA © 2026 · Buenos Aires, Argentina</span>
+    <a href="mailto:hola@syntara.com.ar">hola@syntara.com.ar</a>
   </div>
 </footer>
 

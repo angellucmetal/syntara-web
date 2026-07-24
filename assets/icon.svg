@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="127 45 126 110" role="img">
+<title>Icono de Syntara</title>
+<defs>
+<linearGradient id="syntaraGrad" gradientUnits="userSpaceOnUse" x1="137" y1="0" x2="243" y2="0">
+<stop offset="0%" stop-color="#1A4D8F"/>
+<stop offset="33%" stop-color="#2A9DB8"/>
+<stop offset="66%" stop-color="#2AB8A0"/>
+<stop offset="100%" stop-color="#27AE60"/>
+</linearGradient>
+</defs>
+<rect x="137.2" y="84.25" width="16" height="31.5" rx="8" fill="url(#syntaraGrad)"/>
+<rect x="159.6" y="70.75" width="16" height="58.5" rx="8" fill="url(#syntaraGrad)"/>
+<rect x="182" y="55" width="16" height="90" rx="8" fill="url(#syntaraGrad)"/>
+<rect x="204.4" y="70.75" width="16" height="58.5" rx="8" fill="url(#syntaraGrad)"/>
+<rect x="226.8" y="84.25" width="16" height="31.5" rx="8" fill="url(#syntaraGrad)"/>
+</svg>
