@@ -258,22 +258,14 @@
     max-width: 60ch;
   }
 
-  .component.empty{
+  .component.upcoming{
     border-style: dashed;
-    border-color: var(--line);
     background: transparent;
   }
-  .component.empty .chip{
-    background: transparent;
-    border: 1.5px dashed var(--line);
-    box-shadow: none;
-  }
-  .component.empty .status{
-    color: var(--muted-dim);
+  .component.upcoming .status{
+    color: var(--teal);
     border-color: var(--line);
   }
-  .component.empty h3{ color: var(--muted); font-weight: 500; }
-  .component.empty p{ color: var(--muted-dim); }
 
   /* ---------- FOOTER ---------- */
   footer .section-inner{
@@ -319,7 +311,7 @@
     <a href="#" class="logo" aria-label="Syntara">
       <img src="assets/logo.svg" alt="Syntara">
     </a>
-    <a class="nav-mail" href="mailto:hola@syntara.com.ar">hola@syntara.com.ar</a>
+    <a class="nav-mail" href="mailto:contacto@syntara.com.ar">contacto@syntara.com.ar</a>
   </div>
 </header>
 
@@ -356,7 +348,7 @@
       <p class="eyebrow">Syntara — Buenos Aires, AR</p>
       <h1>Sistemas que <em>sincronizan</em> tu negocio.</h1>
       <p>Diseñamos y construimos aplicaciones, datos e inteligencia artificial que hacen que las piezas de tu operación trabajen en el mismo compás.</p>
-      <a class="cta" href="mailto:hola@syntara.com.ar">Escribinos →</a>
+      <a class="cta" href="mailto:contacto@syntara.com.ar">Escribinos →</a>
     </div>
   </section>
 
@@ -395,20 +387,28 @@
             <p>Una app para llevar el seguimiento médico personal: consultas, estudios y tratamientos, todo en un solo lugar.</p>
           </div>
         </a>
-        <div class="component empty">
+        <a class="component" href="https://3vt.syntara.com.ar" target="_blank" rel="noopener">
           <div class="chip" aria-hidden="true"></div>
           <div class="body">
-            <span class="status">Próximo proyecto</span>
-            <h3>Todavía estamos afinando esta parte</h3>
-            <p>Acá va a aparecer la próxima aplicación.</p>
+            <span class="status">En vivo</span>
+            <h3>3VT</h3>
+            <p>Una app para organizar eventos: invitaciones por mail, venta de entradas, check-in con QR y una sorpresa armada con las fotos y videos de todos los invitados.</p>
           </div>
-        </div>
-        <div class="component empty">
+        </a>
+        <a class="component" href="https://suriarq.syntara.com.ar" target="_blank" rel="noopener">
           <div class="chip" aria-hidden="true"></div>
           <div class="body">
-            <span class="status">Próximo proyecto</span>
-            <h3>Todavía estamos afinando esta parte</h3>
-            <p>Espacio reservado para lo que sigue.</p>
+            <span class="status">En vivo</span>
+            <h3>SuriArq</h3>
+            <p>Seguimiento de obras para arquitectos: etapas, tareas, proveedores, pagos y gastos, con una vista para que el cliente siga el avance.</p>
+          </div>
+        </a>
+        <div class="component upcoming">
+          <div class="chip" aria-hidden="true"></div>
+          <div class="body">
+            <span class="status">Próximamente</span>
+            <h3>Epistemium</h3>
+            <p>Una plataforma educativa para que cualquiera pueda publicar sus cursos: clases en video y materiales protegidos, y más adelante tutorías en vivo entre profesor y alumno.</p>
           </div>
         </div>
       </div>
@@ -419,7 +419,7 @@
 <footer>
   <div class="wrap section-inner">
     <span>SYNTARA © 2026 · Buenos Aires, Argentina</span>
-    <a href="mailto:hola@syntara.com.ar">hola@syntara.com.ar</a>
+    <a href="mailto:contacto@syntara.com.ar">contacto@syntara.com.ar</a>
   </div>
 </footer>
 
